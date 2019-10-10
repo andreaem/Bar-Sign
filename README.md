@@ -5,6 +5,17 @@ Basically I got a board wood burned to look like a 70s Eastern Block transit sig
 
 To adjust for your needs wire up a Raspberry PI to the GPIO slots, and then change the eastbound and westbound variables to whatever transit stops you need.
 
+INSTALL
+
+Download raspbian lite and install to usb
+https://www.raspberrypi.org/downloads/raspbian/
+
+sudo apt install git
+
+git clone https://github.com/andreaem/Bar-Sign.git
+
+sudo apt-get install python3-rpi.gpio
+
 WIFICONFIG:
 
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
@@ -22,3 +33,8 @@ sudo crontab -e
 
 SET->
 @reboot python3 /home/pi/Bar-Sign/pythonSign.py &  
+
+COMMIT TO READ ONLY
+
+wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/read-only-fs.sh
+sudo bash read-only-fs.sh
