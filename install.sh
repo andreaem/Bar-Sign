@@ -23,7 +23,7 @@ read ssid
 echo "enter the password of the network"
 read pw
 echo 'country=CA' | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf
-echo network={ ssid=$ssid psk=$pw } | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf
+echo network={ ssid=\"$ssid\" psk=\"$pw\" } | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf
 
 #doesn't work on locked down system
 #sudo crontab ./crontab_config
