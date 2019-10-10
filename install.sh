@@ -13,15 +13,20 @@ git clone https://github.com/andreaem/Bar-Sign.git
 
 sudo apt-get install python3-rpi.gpio
 
-#the sudo isn't working quite right...
-#echo "enter the SSID of the network"
-#read ssid
-#echo "enter the password of the network"
-#read pw
-#sudo echo 'country=CA' >> /etc/wpa_supplicant/wpa_supplicant.conf
-#sudo echo 'network={ ssid="$ssid" psk="$pw" }' >> /etc/wpa_supplicant/wpa_supplicant.conf
+sed -i '$ d' /etc/rc.local
+sudo echo "python3 /home/py/Bar-Sign/pythonSign.py" >> /etc/rc.local
+sudo echo "exit 0" >> /etc/rc.local
 
-sudo crontab ./crontab_config
+#the sudo isn't working quite right...
+echo "enter the SSID of the network"
+read ssid
+echo "enter the password of the network"
+read pw
+sudo echo 'country=CA' >> /etc/wpa_supplicant/wpa_supplicant.conf
+sudo echo 'network={ ssid="$ssid" psk="$pw" }' >> /etc/wpa_supplicant/wpa_supplicant.conf
+
+#doesn't work on locked down system
+#sudo crontab ./crontab_config
 
 #To lock machine to read only!
 #wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/read-only-fs.sh 
