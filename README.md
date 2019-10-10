@@ -5,6 +5,9 @@ Basically I got a board wood burned to look like a 70s Eastern Block transit sig
 
 To adjust for your needs wire up a Raspberry PI to the GPIO slots, and then change the eastbound and westbound variables to whatever transit stops you need.
 
+Info about the read only mode, the sign was crashing doing memory writes
+https://learn.adafruit.com/read-only-raspberry-pi?view=all.
+
 INSTALL
 
 Download raspbian lite and install to usb
@@ -37,4 +40,5 @@ SET->
 COMMIT TO READ ONLY
 
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/read-only-fs.sh
+
 sudo bash read-only-fs.sh
