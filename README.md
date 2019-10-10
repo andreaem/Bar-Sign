@@ -5,5 +5,20 @@ Basically I got a board wood burned to look like a 70s Eastern Block transit sig
 
 To adjust for your needs wire up a Raspberry PI to the GPIO slots, and then change the eastbound and westbound variables to whatever transit stops you need.
 
-To add or edit wifi networks on a rapsberry pi from the command like use:
+WIFICONFIG:
+
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+SET ->
+
+country=CA
+network={
+    ssid="testing"
+    psk="testingPassword"
+}
+
+AUTOSTART
+
+sudo crontab -e
+
+SET->
+@reboot python3 /home/pi/Bar-Sign/pythonSign.py &  
