@@ -17,7 +17,8 @@ sudo apt install git
 
 git clone https://github.com/andreaem/Bar-Sign.git
 
-sudo apt-get install python3-rpi.gpio
+
+
 
 WIFICONFIG:
 
